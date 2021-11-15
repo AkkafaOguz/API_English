@@ -37,7 +37,7 @@ public class Get06 extends HerOkuAppBaseUrl {
     @Test
     public void test() {
 
-        spec.pathParams("first", "booking", "second", 5);
+        spec.pathParams("first", "booking", "second", 2);
 
         Response response = given().spec(spec).when().get("/{first}/{second}");
 
@@ -59,6 +59,7 @@ public class Get06 extends HerOkuAppBaseUrl {
                         "bookingdates.checkout", equalTo("2017-10-09"));
 
 
+
         // 2.Way:  Use JsonPath (More secure)
 
         // JsonPath is a class, and it has many useful methods "to navigate inside the Json Data"
@@ -72,6 +73,8 @@ public class Get06 extends HerOkuAppBaseUrl {
         // Create JsonPath object from response object (json object has everything what response object has)
 
         JsonPath json = response.jsonPath();
+
+
 
         assertEquals("Eric", json.getString("firstname"));
         assertEquals("Jones", json.getString("lastname"));

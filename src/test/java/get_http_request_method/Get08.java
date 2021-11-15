@@ -15,7 +15,7 @@ public class Get08 extends JsonPlaceHolderBaseUrl {
     /*
         The biggest challenge in API Testing is data types
         1)Java uses Objects and Primitives as data type, API uses XML, Json, etc.
-          Java and API are using different data types, but they should communicat with each other.
+          Java and API are using different data types, but they should communicate with each other.
           Communication is impossible with different data types.
           We have 2 options:
           i)Convert Json to Java Object ==> De-Serialization
