@@ -132,6 +132,8 @@ public class Post03 extends AgroMonitoringBaseUrl {
         assertEquals(requestBodyMap.get("area"),responseBody.get("area"));
         assertEquals(requestBodyMap.get("name"),responseBody.get("name"));
         assertEquals(requestBody.geometrySetUp().get("type"),((Map)((Map)responseBody.get("geo_json")).get("geometry")).get("type"));
+        assertEquals(String.valueOf(requestBody.coordinates[0][1][0]),((Map)((Map)responseBody.get("geo_json")).get("geometry")).get("coordinates").toString().substring(25,34));
+
 
 
     }

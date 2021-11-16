@@ -4,7 +4,7 @@ import base_urls.JsonPlaceHolderBaseUrl;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.junit.Test;
-import test_Data.JasonPlaceHolderTaskData;
+import test_Data.JsonPlaceHolderTaskData;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,7 +12,7 @@ import java.util.Map;
 import static io.restassured.RestAssured.given;
 import static org.junit.Assert.assertEquals;
 
-public class Post02 extends JsonPlaceHolderBaseUrl {
+public class Post02_Authorization extends JsonPlaceHolderBaseUrl {
 
      /*
         Given
@@ -45,8 +45,8 @@ public class Post02 extends JsonPlaceHolderBaseUrl {
         //It is better to separate them, we can manage the data better.
         //It made test method shorter
 
-        JasonPlaceHolderTaskData expectedData = new JasonPlaceHolderTaskData();
-        Map<String,Object> expectedDataMap = expectedData.expectedDataSetUp();
+        JsonPlaceHolderTaskData expectedData = new JsonPlaceHolderTaskData();
+        Map<String,Object> expectedDataMap = expectedData.expectedDataSetUp(55,"Tidy your room",false);
 
         // Authorization : after spec() -> auth() -> basic ("username","password")
         // Get request has no risk, but the methods except GET has risk. That's why, we need authorization.
