@@ -17,18 +17,19 @@ import static org.junit.Assert.assertEquals;
 public class PostGetWithObjectMapperAndPojo01 extends HerOkuAppBaseUrl {
 
         /*
+
         Given
-    https://restful-booker.herokuapp.com/booking
-    {
-        "firstname": "Selim",
-        "lastname": "Ak",
-        "totalprice": 11111,
-        "depositpaid": true,
-        "bookingdates": {
-            "checkin": "2021-09-09",
-            "checkout": "2021-09-21"
-         }
-      }
+            https://restful-booker.herokuapp.com/booking
+            {
+                "firstname": "Selim",
+                "lastname": "Ak",
+                "totalprice": 11111,
+                "depositpaid": true,
+                "bookingdates": {
+                    "checkin": "2021-09-09",
+                    "checkout": "2021-09-21"
+                 }
+              }
         When
 	 		I send POST Request to the Url
         And
@@ -51,6 +52,7 @@ public class PostGetWithObjectMapperAndPojo01 extends HerOkuAppBaseUrl {
                 }
             }
          }
+
      */
 
     @Test
@@ -70,10 +72,16 @@ public class PostGetWithObjectMapperAndPojo01 extends HerOkuAppBaseUrl {
         Response response = given().spec(spec).contentType(ContentType.JSON).body(expectedDataPojo).when().post("/{first}");
         response.prettyPrint();
 
-        BookingPostResponseBodyPojo postResponseBodyInPojo = JsonUtils.convertJsonToJava(response.asString(), BookingPostResponseBodyPojo.class);
-        System.out.println(postResponseBodyInPojo);
 
-        Integer bookingId = postResponseBodyInPojo.getBookingid();
+                //CONVERT POST RESPONSE BODY TO JAVA OBJECT BY USING OBJECT MAPPER TO GET BOOKING ID
+
+                BookingPostResponseBodyPojo postResponseBodyInPojo = JsonUtils.convertJsonToJava(response.asString(), BookingPostResponseBodyPojo.class);
+                System.out.println(postResponseBodyInPojo);
+
+                Integer bookingId = postResponseBodyInPojo.getBookingid();
+
+
+            //BY USING ID WE SEND THE GET REQUEST
 
             //1.Step: Set the URL for the GET request
 
@@ -84,7 +92,10 @@ public class PostGetWithObjectMapperAndPojo01 extends HerOkuAppBaseUrl {
             Response response1 = given().spec(spec).when().get("/{first}/{second}");
             response1.prettyPrint();
 
+            //WE CONVERT GET RESP0NSE BODY TO JAVA OBJECT BY USING OBJECT MAPPER
+
             BookingPojo getResponseBodyInPojo = JsonUtils.convertJsonToJava(response1.asString(),BookingPojo.class);
+
 
         //4.Step: Do assertions
 
