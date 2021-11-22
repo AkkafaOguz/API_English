@@ -5,6 +5,8 @@ import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 @JsonIgnoreProperties (ignoreUnknown = true)
 public class JsonPlaceHolderPojo {
 
+    //https://www.jsonschema2pojo.org
+
     //Create private variables
 
     private Integer userId;

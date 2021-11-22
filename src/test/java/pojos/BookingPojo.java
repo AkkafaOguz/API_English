@@ -5,6 +5,8 @@ import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 @JsonIgnoreProperties (ignoreUnknown = true)
 public class BookingPojo {
 
+    //https://www.jsonschema2pojo.org
+
     private String firstname;
     private String lastname;
     private Integer totalprice;

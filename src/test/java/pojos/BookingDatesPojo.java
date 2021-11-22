@@ -5,6 +5,8 @@ import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class BookingDatesPojo {
 
+    //https://www.jsonschema2pojo.org
+
     private String checkin;
     private String checkout;
 

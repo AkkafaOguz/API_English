@@ -1,0 +1,3 @@
+-> If you are given limited test data, how would you manage to your validation?
+-> @JsonIgnoreProperties (ignoreUnknown = true)
+

@@ -2,6 +2,8 @@ package pojos;
 
 public class BookingPostResponseBodyPojo {
 
+    //https://www.jsonschema2pojo.org
+
     private Integer bookingid;
     private BookingPojo booking;
 
